@@ -9,18 +9,21 @@
       </h2>
       <ul>
         <% @article.errors.full_messages.each { |msg| %>
-          <li><%= msg %></li>
-        <% } %>
+          <li>
+            <%= msg %>
+          </li>
+          <% } %>
       </ul>
     </div>
   <% end %>
-
   <p>
-    <%= form.label :title %><br>
+    <%= form.label :title %>
+    <br>
     <%= form.text_field :title %>
   </p>
   <p>
-    <%= form.label :text %><br>
+    <%= form.label :text %>
+    <br>
     <%= form.text_area :text %>
   </p>
   <p>
@@ -28,3 +31,4 @@
   </p>
 <% end %>
 <hr>
+<%= link_to "back", articles_path %>

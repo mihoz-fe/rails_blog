@@ -4,4 +4,5 @@
   <strong>Text :</strong>
   <%= @article.text %>
 </p>
-<%= link_to 'back', articles_path %>
+<%= link_to "edit", edit_article_path(@article) %>
+<%= link_to "back", articles_path %>
