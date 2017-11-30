@@ -4,5 +4,32 @@
   <strong>Text :</strong>
   <%= @article.text %>
 </p>
+<br>
+<h2>Comments</h2>
+<hr>
+<% @article.comments.each do |comment| %>
+  <p>
+    <span>Author: </span>
+    <%= comment.commenter %>
+  </p>
+  <p>
+    <span>Comment: </span>
+    <%= comment.body %>
+  </p>
+<% end %>
+<h5>Add a comment</h5>
+<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :Author %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :your_comment %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
 <%= link_to "edit", edit_article_path(@article) %>
 <%= link_to "back", articles_path %>
