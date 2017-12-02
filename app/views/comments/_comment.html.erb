@@ -1,0 +1,14 @@
+<p>
+  <span>Author: </span>
+  <%= comment.commenter %>
+</p>
+<p>
+  <span>Comment: </span>
+  <%= comment.body %>
+</p>
+
+<div>
+  <%= link_to "delete comment", [comment.article, comment],
+              method: :delete,
+              data: { confirm: "Are you shure?"} %>
+</div>
